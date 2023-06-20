@@ -1,3 +1,5 @@
+import heapq
+
 def counting_sort(arr):
     max_val = max(arr)
     m = max_val+1
@@ -97,11 +99,14 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 
-def heap_sort(arr):
-    import heapq
+def min_heap_sort(arr):
     heapq.heapify(arr)
-    arr[:] = [heapq.heappop(arr) for _ in range(len(arr))]
-    return arr
+    return [heapq.heappop(arr) for _ in range(len(arr))]
+
+def max_heap_sort(arr):
+    arr = [-1 * i for i in arr]
+    heapq.heapify(arr)
+    return [-1 * heapq.heappop(arr) for _ in range(len(arr))]
 
 sort_algorithms = {
     'counting': counting_sort,
@@ -111,7 +116,8 @@ sort_algorithms = {
     'selection': selection_sort,
     'merge': merge_sort,
     'quick': quick_sort,
-    'heap': heap_sort
+    'min_heap': min_heap_sort,
+    'max_heap': max_heap_sort
 }
 
 def sort_array(arr, sort_type, iterations):
@@ -124,7 +130,7 @@ def sort_array(arr, sort_type, iterations):
     return arr
 
 # example usage:
-arr = [3, 6, 8, 10, 1, 2, 1]
+arr = [0, 0, 1, 1, 0, 1, 0]
 sort_type = 'quick'
-iterations = 4
+iterations = 1
 print(sort_array(arr, sort_type, iterations))

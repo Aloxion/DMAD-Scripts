@@ -13,4 +13,4 @@ def master_theorem(a, b, c):
         return "Input Error!"
 
 # example usage
-print(master_theorem(2, 3, 1))
+print(master_theorem(3, 3, 1))
