@@ -3,7 +3,7 @@ import heapq
 def dijkstra(graph, start):
     queue = [(0, start)]
     visited = {start: 0}
-    relax_count = 0
+    relax_count = 1
     while queue:
         (dist, current) = heapq.heappop(queue)
         print(f"Node removed from the list: {current}")
