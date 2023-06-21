@@ -39,6 +39,8 @@ def calculate_tree_size(frequencies, letters):
     code = defaultdict(str)
     encode(tree, '', code)
     tree_size = sum([len(code[char]) * freq for char, freq in frequencies.items() if char in letters])
+    for letter in letters:
+        print("Letter: {}, Bit Value: {}".format(letter, code[letter]))
     return tree_size
 
 # character frequencies
@@ -51,4 +53,5 @@ frequencies = {
 }
 #Write the letters you want to calculate the size for
 letters = ['a','b','c','d','e']
-print("Huffman tree size for letters {} : ".format(letters), calculate_tree_size(frequencies, letters))
+tree_size = calculate_tree_size(frequencies, letters)
+print("Huffman tree size for letters {} : ".format(letters), tree_size)
