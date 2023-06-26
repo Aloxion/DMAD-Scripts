@@ -129,8 +129,9 @@ def sort_array(arr, sort_type, iterations):
         arr = sort_func(arr[:])
     return arr
 
+iterations = 1
+
 # example usage:
 arr = [0, 0, 1, 1, 0, 1, 0]
 sort_type = 'quick'
-iterations = 1
 print(sort_array(arr, sort_type, iterations))

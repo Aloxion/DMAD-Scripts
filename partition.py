@@ -12,9 +12,9 @@ def partition(arr, low, high):
 
 # Test the function
 #Remember to add a 0 first since the array can be excluding the zero index
-arr = [0, 21, 17, 28, 14, 9, 18, 6, 1, 26, 15, 30, 7, 13, 19, 2]
-high = 13
-low = 4
+arr = [0, 6, 2, 4, 5, 1, 7, 3]
+high = 7
+low = 1
 pivot_index = partition(arr, low, high)
 print(f"Array after partitioning: {arr}")
 print(f"Pivot index: {pivot_index}")
