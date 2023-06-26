@@ -67,4 +67,4 @@ g.add_edge('I', 'E', 1)
 g.add_edge('D', 'E', 7)
 
 g.kruskal()
-print("Sammenlig -Checking edge- med -edges in the minium spanning tree- den første som ikke er med -spanning tree- er svaret")
+print("Sammenlig -Checking edge- med -edges in the minium spanning tree- den første som IKKE er med i -spanning tree- er svaret")
