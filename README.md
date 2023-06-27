@@ -1,2 +1,2 @@
 # DMAD-Scripts
-# Made by Zendaya
+# Made by Zendaya som er en lille bitch boy
