@@ -60,6 +60,10 @@ g1.add_edge('g', 'f')
 g1.add_edge('h', 'c')
 g1.add_edge('i', 'd')
 g1.add_edge('i', 'h')
+<<<<<<< HEAD
 g1.add_edge('a','e')
 print("Strongly connected components in the graph are:")
+=======
+print("Strongly connected components in the graph are - Each line is a strongly connected component:")
+>>>>>>> a6ee31e5b95958fbbeb6cf10248279b3da99ef86
 SCC_count = g1.SCC()
