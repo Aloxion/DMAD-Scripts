@@ -1,5 +1,10 @@
 import ttg
-print(ttg.Truths(['p', 'q', 'r']))  #One list is an input variable list
+<<<<<<< HEAD
+print(ttg.Truths(['p', 'q'],['p or q']))  #One list is an input variable list
+=======
+print(ttg.Truths(['p', 'q'], ['p or q' ]))  #One list is an input variable list
+
+>>>>>>> 12420c243110338c0dde15f3f1a742d403fa362d
 
 #With two lists, the second is an expression given the operators of the first list
 print(ttg.Truths(['p', 'q', 'r'], ['p and q and r', 'p or q or r', '(p or (~q)) => r']))
