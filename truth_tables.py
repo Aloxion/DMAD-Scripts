@@ -1,21 +1,17 @@
 import ttg
-<<<<<<< HEAD
-print(ttg.Truths(['p', 'q'],['p or q']))  #One list is an input variable list
-=======
-print(ttg.Truths(['p', 'q'], ['p or q' ]))  #One list is an input variable list
-
->>>>>>> 12420c243110338c0dde15f3f1a742d403fa362d
-
-#With two lists, the second is an expression given the operators of the first list
-print(ttg.Truths(['p', 'q', 'r'], ['p and q and r', 'p or q or r', '(p or (~q)) => r']))
+print(ttg.Truths(['p', 'q'], ['p or q']))  # One list is an input variable list
 
 
-#Operators and their representations:
-    #negation: 'not', '-', '~'
-    #logical disjunction: 'or'
-    #logical nor: 'nor'
-    #exclusive disjunction: 'xor', '!='
-    #logical conjunction: 'and'
-    #logical NAND: 'nand'
-    #material implication: '=>', 'implies'
-    #logical biconditional: '='
+# With two lists, the second is an expression given the operators of the first list
+print(ttg.Truths(['p', 'q'], ['(p = q) and (p xor q)']))
+
+
+# Operators and their representations:
+# ¬ negation: 'not', '-', '~'
+# ∨ logical disjunction: 'or'
+# logical nor: 'nor'
+# ⊕ exclusive disjunction: 'xor', '!='
+# ∧ logical conjunction: 'and'
+# logical NAND: 'nand'
+# => material implication: '=>', 'implies'
+# <=> logical biconditional: '='
