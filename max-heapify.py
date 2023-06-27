@@ -98,14 +98,17 @@ class MaxHeap:
     def print(self):
         print(*self.heap)
 
-heap = MaxHeap([5, 4, 3, 3, 4, 2, 3, 2, 1])
+
+heap = MaxHeap([1, 1, 0, 1, 0, 0, 0, 1])
 
 
 print('Heap: ')
 heap.print()
-#print(heap.delete(2))
+# print(heap.delete(2))
 print('Extract: ')
 heap.extract_max()
+# hvis der skal udføres 2 heap extract max kør "heap.extract_max()" 2 gange
+# heap.extract_max()
 heap.print()
 print('Max-heapify: ')
 heap.print()

@@ -57,6 +57,7 @@ for node in ['A', 'B', 'C', 'D','E','F','G','H','I']:
 g.add_edge('A', 'B', 4)
 g.add_edge('A', 'F', 3)
 g.add_edge('F', 'B', 5)
+g.add_edge('G', 'B', 2)
 g.add_edge('F', 'G', 8)
 g.add_edge('G', 'C', 6)
 g.add_edge('B', 'C', 1)

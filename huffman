@@ -45,11 +45,12 @@ def calculate_tree_size(frequencies, letters):
 
 # character frequencies
 frequencies = {
-    'a': 200,
-    'b': 250,
-    'c': 100,
-    'd': 350,
-    'e': 400
+    'a': 5,
+    'b': 25,
+    'c': 10,
+    'd': 30,
+    'e': 15,
+
 }
 #Write the letters you want to calculate the size for
 letters = ['a','b','c','d','e']

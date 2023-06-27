@@ -3,8 +3,7 @@ import heapq
 def counting_sort(arr):
     max_val = max(arr)
     m = max_val+1
-    count = [0]*m
-                
+    count = [0]*m                
     for a in arr:
         count[a] += 1
     i = 0
@@ -12,6 +11,7 @@ def counting_sort(arr):
         for c in range(count[a]):
             arr[i] = a
             i += 1
+        print(f"After counting value {a}: {arr}")
     return arr
 
 def radix_sort(arr):
@@ -30,6 +30,7 @@ def radix_sort(arr):
             for i in buck:
                 arr[a] = i
                 a += 1
+        print(f"After sorting digits at place {placement}: {arr}")
         placement *= RADIX
     return arr
 
@@ -47,6 +48,7 @@ def bubble_sort(arr):
             if arr[i - 1] > arr[i]:
                 swap(i - 1, i)
                 swapped = True
+        print(f"After pass {x+1}: {arr}")
     return arr
 
 def insertion_sort(arr):
@@ -57,6 +59,7 @@ def insertion_sort(arr):
             arr[pos] = arr[pos - 1]
             pos = pos - 1
         arr[pos] = cursor
+        print(f"After inserting element {i}: {arr}")
     return arr
 
 def selection_sort(arr):
@@ -66,6 +69,7 @@ def selection_sort(arr):
             if arr[j] < arr[minimum]:
                 minimum = j
         arr[minimum], arr[i] = arr[i], arr[minimum]
+        print(f"After pass {i+1}: {arr}")
     return arr
 
 def merge_sort(arr):
@@ -88,6 +92,7 @@ def merge(left, right, merged):
         merged[left_cursor + right_cursor] = left[left_cursor]
     for right_cursor in range(right_cursor, len(right)):
         merged[left_cursor + right_cursor] = right[right_cursor]
+    print(f"Merge result: {merged}")
     return merged
 
 def quick_sort(arr):
@@ -97,16 +102,21 @@ def quick_sort(arr):
     left = [x for x in arr if x < pivot]
     middle = [x for x in arr if x == pivot]
     right = [x for x in arr if x > pivot]
+    print(f"Partitioning on pivot {pivot}: {left + middle + right}")
     return quick_sort(left) + middle + quick_sort(right)
 
 def min_heap_sort(arr):
     heapq.heapify(arr)
-    return [heapq.heappop(arr) for _ in range(len(arr))]
+    sorted_arr = [heapq.heappop(arr) for _ in range(len(arr))]
+    print(f"Min heap sorted array: {sorted_arr}")
+    return sorted_arr
 
 def max_heap_sort(arr):
     arr = [-1 * i for i in arr]
     heapq.heapify(arr)
-    return [-1 * heapq.heappop(arr) for _ in range(len(arr))]
+    sorted_arr = [-1 * heapq.heappop(arr) for _ in range(len(arr))]
+    print(f"Max heap sorted array: {sorted_arr}")
+    return sorted_arr
 
 sort_algorithms = {
     'counting': counting_sort,
@@ -120,18 +130,16 @@ sort_algorithms = {
     'max_heap': max_heap_sort
 }
 
-def sort_array(arr, sort_type, iterations):
+def sort_array(arr, sort_type):
     sort_func = sort_algorithms.get(sort_type)
     if not sort_func:
         raise ValueError(f'Invalid sort type: {sort_type}')
     
-    for _ in range(iterations):
-        arr = sort_func(arr[:])
-    return arr
+    sorted_arr = sort_func(arr[:])
+    return sorted_arr
 
-iterations = 1
 
 # example usage:
-arr = [0, 0, 1, 1, 0, 1, 0]
-sort_type = 'quick'
-print(sort_array(arr, sort_type, iterations))
+arr = [2452, 5363, 4433, 1413, 2433, 3222, 2121]
+sort_type = 'selection'
+print(sort_array(arr, sort_type))
