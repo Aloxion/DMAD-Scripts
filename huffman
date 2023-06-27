@@ -45,13 +45,15 @@ def calculate_tree_size(frequencies, letters):
 
 # character frequencies
 frequencies = {
-    'a': 200,
-    'b': 250,
-    'c': 100,
-    'd': 350,
-    'e': 400
+    'a': 500,
+    'b': 400,
+    'c': 300,
+    'd': 250,
+    'e': 200,
+    'f': 150
 }
 #Write the letters you want to calculate the size for
-letters = ['a','b','c','d','e']
+letters = frequencies.keys()
+#letters = [a,b,c,d,e,f]
 tree_size = calculate_tree_size(frequencies, letters)
 print("Huffman tree size for letters {} : ".format(letters), tree_size)
