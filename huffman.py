@@ -1,6 +1,7 @@
 import heapq
 from collections import defaultdict
 
+
 class Node:
     def __init__(self, char, freq):
         self.char = char
@@ -38,10 +39,12 @@ def calculate_tree_size(frequencies, letters):
     tree = huffman_tree(frequencies)
     code = defaultdict(str)
     encode(tree, '', code)
-    tree_size = sum([len(code[char]) * freq for char, freq in frequencies.items() if char in letters])
+    tree_size = sum([len(code[char]) * freq for char,
+                    freq in frequencies.items() if char in letters])
     for letter in letters:
         print("Letter: {}, Bit Value: {}".format(letter, code[letter]))
     return tree_size
+
 
 # character frequencies
 frequencies = {
@@ -52,7 +55,7 @@ frequencies = {
     'e': 15,
 
 }
-#Write the letters you want to calculate the size for
-letters = ['a','b','c','d','e']
+# Write the letters you want to calculate the size for
+letters = ['a', 'b', 'c', 'd', 'e']
 tree_size = calculate_tree_size(frequencies, letters)
 print("Huffman tree size for letters {} : ".format(letters), tree_size)
