@@ -4,25 +4,27 @@ class Graph:
         self.discovery_time = {}
         self.finish_time = {}
         self.time = 0
+        self.parent = {}
 
     def add_edge(self, v, w):
         if v not in self.adjacency_list:
             self.adjacency_list[v] = []
         self.adjacency_list[v].append(w)
 
-    def DFS_visit(self, u, parent, visited, edge_types):
+    def DFS_visit(self, u, visited, edge_types):
         visited.add(u)
         self.time += 1
         self.discovery_time[u] = self.time
         for v in self.adjacency_list.get(u, []):
             if v not in visited:
+                self.parent[v] = u
                 edge_types[(u, v)] = 'Tree'
-                self.DFS_visit(v, u, visited, edge_types)
-            elif v not in self.discovery_time:
+                self.DFS_visit(v, visited, edge_types)
+            elif v in visited and v not in self.finish_time:
                 edge_types[(u, v)] = 'Back'
-            elif self.discovery_time[u] < self.discovery_time[v]:
+            elif v in visited and self.discovery_time[u] < self.discovery_time[v]:
                 edge_types[(u, v)] = 'Forward'
-            else:
+            elif v in visited and self.discovery_time[u] > self.discovery_time[v]:
                 edge_types[(u, v)] = 'Cross'
         self.time += 1
         self.finish_time[u] = self.time
@@ -31,8 +33,10 @@ class Graph:
         visited = set()
         edge_types = {}
         for u in self.adjacency_list:
+            self.parent[u] = None
+        for u in self.adjacency_list:
             if u not in visited:
-                self.DFS_visit(u, None, visited, edge_types)
+                self.DFS_visit(u, visited, edge_types)
         return edge_types
 
 # Create a graph
