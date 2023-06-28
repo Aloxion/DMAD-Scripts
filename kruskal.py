@@ -72,20 +72,19 @@ def compare_arrays(array1, array2):
 edges = []
 edgesInMinumum = []
 g = Graph()
-for node in ['A', 'B', 'C', 'D','E','F','G','H','I']:
+for node in ['A', 'B', 'C', 'D','E','F','G','H']:
     g.add_node(node)
-g.add_edge('A', 'B', 4)
-g.add_edge('A', 'F', 3)
-g.add_edge('F', 'B', 5)
-g.add_edge('G', 'B', 2)
-g.add_edge('F', 'G', 8)
-g.add_edge('G', 'C', 6)
-g.add_edge('B', 'C', 1)
-g.add_edge('C', 'H', 9)
-g.add_edge('H', 'D', 6)
-g.add_edge('D', 'I', 7)
-g.add_edge('I', 'E', 1)
-g.add_edge('D', 'E', 7)
+g.add_edge('A', 'C', 6)
+g.add_edge('A', 'G', 9)
+g.add_edge('A', 'E', 8)
+g.add_edge('B', 'D', 5)
+g.add_edge('B', 'H', 11)
+g.add_edge('B', 'G', 3)
+g.add_edge('C', 'F', 12)
+g.add_edge('C', 'D', 2)
+g.add_edge('D', 'G', 7)
+g.add_edge('E', 'F', 0)
+g.add_edge('H', 'G', 10)
 
 g.kruskal()
 print("Sammenlig -Checking edge- med -edges in the minium spanning tree- den første som IKKE er med i -spanning tree- er svaret")
