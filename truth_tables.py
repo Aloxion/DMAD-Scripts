@@ -3,7 +3,7 @@ import ttg
 
 
 # With two lists, the second is an expression given the operators of the first list
-print(ttg.Truths(['p', 'q'], ['p => q']))
+print(ttg.Truths(['p', 'q'], ['p or -q', '-p and q']))
 
 
 # Operators and their representations:
