@@ -105,10 +105,11 @@ print('Heap: ')
 heap.print()
 #print(heap.delete(2))
 print('Extract: ')
-
+#heap.extract_max()
 heap.print()
 print('Max-heapify: ')
 heap.print()
 print('Insert: ')
+#heap.insert()
 
 heap.print()

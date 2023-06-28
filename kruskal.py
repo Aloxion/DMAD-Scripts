@@ -41,6 +41,7 @@ class Graph:
             u, v, w = self.graph[i]
             i += 1
             print(f"Checking edge {u} - {v}")
+            edges.append(f"{u} - {v}")
             x = self.find(parent, u)
             y = self.find(parent, v)
             if x != y:
@@ -50,7 +51,26 @@ class Graph:
         print("Edges in the minimum spanning tree:")
         for u, v, weight in result:
             print(f"{u} -- {v} == {weight}")
+            edgesInMinumum.append(f"{u} - {v}")
 
+def compare_arrays(array1, array2):
+    mismatched_values = []
+    
+    # Check the elements at each index
+    for i in range(min(len(array1), len(array2))):
+        if array1[i] != array2[i]:
+            mismatched_values.append((array1[i], array2[i]))
+    
+    # Check if one array is longer than the other
+    if len(array1) > len(array2):
+        mismatched_values.extend(array1[len(array2):])
+    elif len(array1) < len(array2):
+        mismatched_values.extend(array2[len(array1):])
+    
+    return mismatched_values[0]
+
+edges = []
+edgesInMinumum = []
 g = Graph()
 for node in ['A', 'B', 'C', 'D','E','F','G','H','I']:
     g.add_node(node)
@@ -69,3 +89,5 @@ g.add_edge('D', 'E', 7)
 
 g.kruskal()
 print("Sammenlig -Checking edge- med -edges in the minium spanning tree- den første som IKKE er med i -spanning tree- er svaret")
+notInMst = str(compare_arrays(edges,edgesInMinumum)).split(',')[0].replace('(', '')
+print(notInMst, 'or', notInMst[::-1] )

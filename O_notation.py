@@ -13,7 +13,6 @@ if __name__ == "__main__":
     # If first function grows faster it will go towards infinity
     # If second function grows faster it will go towards 0
     # If they're growing at the same rate it's a non 0 numbern²
-
     limit_expr = limit(first_function/second_function, n, oo)
 
     first_function = str(first_function).replace('**', '^')
@@ -27,6 +26,6 @@ if __name__ == "__main__":
         print(f"o, O")
     else:
         print("Both functions grow at the same rate")
-        print(f"Phi, O, Omega")
+        print(f"Theta, O, Omega")
 
     print(f"Limited expression: {limit_expr}")
