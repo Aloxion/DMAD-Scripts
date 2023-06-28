@@ -97,10 +97,16 @@ class MinHeap:
     def print(self):
         print(*self.heap)
 
+
 heap = MinHeap([2, 4, 3, 7, 7, 5, 6, 8, 9])
+
+
+# ved indsæt brug dette nedenfor:
+# heap.insert()
+
 print('Heap: ')
 heap.print()
-#print(heap.delete(2))
+# print(heap.delete(2))
 print('Extract min: ')
 heap.extract_min()
 heap.print()
